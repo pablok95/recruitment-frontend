@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {todosActions} from "./store/todos";
+import {connect} from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App({todos, add, remove}) {
+
+    function handleClick() {
+        add('test2')
+    }
+
+    return (
+        <div>
+            <button onClick={handleClick}>Click</button>
+            <pre>
+                {todos}
+            </pre>
+        </div>
+    );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        todos: state.todos
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        add: (item) => dispatch(todosActions.add(item)),
+        remove: (item) => dispatch(todosActions.remove(item)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
