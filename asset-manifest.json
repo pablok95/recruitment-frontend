@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pablok95/recruitment-frontend/static/css/main.8d3a40d1.css",
+    "main.js": "/pablok95/recruitment-frontend/static/js/main.1ce1c413.js",
+    "static/js/787.b569d096.chunk.js": "/pablok95/recruitment-frontend/static/js/787.b569d096.chunk.js",
+    "index.html": "/pablok95/recruitment-frontend/index.html",
+    "main.8d3a40d1.css.map": "/pablok95/recruitment-frontend/static/css/main.8d3a40d1.css.map",
+    "main.1ce1c413.js.map": "/pablok95/recruitment-frontend/static/js/main.1ce1c413.js.map",
+    "787.b569d096.chunk.js.map": "/pablok95/recruitment-frontend/static/js/787.b569d096.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d3a40d1.css",
+    "static/js/main.1ce1c413.js"
+  ]
+}
