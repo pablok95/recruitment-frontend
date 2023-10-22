@@ -1,22 +1,22 @@
-import types from "./types";
+import types from './types';
 
 const add = (item) => ({
-    type: types.ADD_TASK,
-    item
-})
+  type: types.ADD_TASK,
+  item
+});
 
-const remove = (item) => ({
-    type: types.REMOVE_TASK,
-    item
-})
+const remove = (id) => ({
+  type: types.REMOVE_TASK,
+  id
+});
 
 const changeStatus = (item) => ({
-    type: types.CHANGE_STATUS,
-    item,
-})
+  type: types.CHANGE_STATUS,
+  item
+});
 
-export default  {
-    add,
-    remove,
-    changeStatus
-}
+export default {
+  add,
+  remove,
+  changeStatus
+};

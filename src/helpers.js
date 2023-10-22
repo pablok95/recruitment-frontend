@@ -1,3 +1,3 @@
-import {TASK_STATUSES} from "constants.js";
+import { TASK_STATUSES } from 'constants.js';
 
-export const isTaskCompleted = (status) => status === TASK_STATUSES.COMPLETED
+export const isTaskCompleted = (status) => status === TASK_STATUSES.COMPLETED;
