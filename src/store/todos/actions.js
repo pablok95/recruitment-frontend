@@ -10,7 +10,13 @@ const remove = (item) => ({
     item
 })
 
+const changeStatus = (item) => ({
+    type: types.CHANGE_STATUS,
+    item,
+})
+
 export default  {
     add,
-    remove
+    remove,
+    changeStatus
 }

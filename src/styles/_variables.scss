@@ -1,0 +1,29 @@
+// Colors
+$color-border-primary: '#fff';
+$color-button-primary: '#fff';
+$color-button-secondary: '#1E3424';
+$color-text-primary: '#1E3424';
+$color-text-secondary: '#1E3424';
+$color-background-primary: '#f9f9f9';
+$color-background-secondary: '#ffffff';
+$color-border-primary: '#E7E7E7';
+$color-border-secondary: '#E7E7E7';
+$color-success: '#068400';
+$color-error: '#e50000';
+
+// Text sizes
+$text-xxs: 0.65rem;
+$text-xs: 0.75rem;
+$text-sm: 0.85rem;
+$text-md: 1rem;
+$text-lg: 1.25rem;
+$text-xl: 2.25rem;
+
+// Breakpoints
+$breakpoints: (
+        "sm": 640px,
+        "md": 768px,
+        "lg": 1024px,
+        "xl": 1280px,
+        "xxl": 1536px,
+);

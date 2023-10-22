@@ -1,0 +1,31 @@
+@import "variables";
+
+.button {
+  appearance: none;
+  overflow: visible;
+  font-weight: bold;
+  background: deepskyblue;
+  color: #{$color-button-primary};
+  height: 2.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+.button-icon {
+  @extend .button;
+  background: transparent;
+  color: #{$color-button-secondary};
+  outline: none;
+  border: none;
+  padding: .5rem;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

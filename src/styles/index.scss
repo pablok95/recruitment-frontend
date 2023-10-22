@@ -1,8 +1,23 @@
-@import "reset.scss";
-@import "variables.scss";
-@import "colors.scss";
-@import "fonts.scss";
+@import "reset";
+@import 'react-redux-toastr/src/styles/index';
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "helpers";
+@import "buttons";
+@import "forms";
+
+*, *:before, *:after  {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
 
 body {
-  background-color: beige;
+  @extend .text-base;
+  background: #{$color-background-primary};
+  font-family: "Helvetica Neue", Helvetica, Arial sans-serif;
 }

@@ -1,0 +1,33 @@
+@import '_variables.scss';
+
+label {
+  display: block;
+  font-size: #{$text-xs};
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input, textarea {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  border: 1px #{$color-border-secondary} solid;
+  border-radius: 8px;
+  background: #{$color-background-primary};
+  font-size: #{$text-md};
+  font-family: "Helvetica Neue", Helvetica, Arial sans-serif;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+input::placeholder, textarea::placeholder {
+  font-size: #{$text-sm};
+}
+
+input[type=text] {
+
+}

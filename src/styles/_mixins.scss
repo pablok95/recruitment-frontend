@@ -1,0 +1,9 @@
+@import 'variables';
+
+@mixin responsive($size) {
+  $query: map-get($breakpoints, $size);
+
+  @media screen and (min-width: #{$query}) {
+    @content;
+  }
+}

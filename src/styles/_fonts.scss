@@ -1,0 +1,31 @@
+@import "variables";
+
+.text-label {
+  font-size: #{$text-sm};
+}
+
+.text-base {
+  font-size: #{$text-md};
+  color: #{$color-text-secondary};
+}
+
+.text-header-1 {
+  font-weight: bold;
+  font-size: #{$text-xl};
+}
+
+.text-header-2 {
+  font-weight: bold;
+  font-size: #{$text-lg};
+  margin-bottom: 1rem;
+}
+
+.text-header-3 {
+  font-weight: bold;
+  font-size: #{$text-md};
+}
+
+.text-description {
+  margin-top: 4px;
+  font-size: #{$text-sm};
+}

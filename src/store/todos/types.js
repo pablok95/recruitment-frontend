@@ -1,7 +1,9 @@
 const ADD_TASK = 'ADD_TASK'
 const REMOVE_TASK = 'REMOVE_TASK'
+const CHANGE_STATUS = 'CHANGE_STATUS'
 
 export default {
     ADD_TASK,
-    REMOVE_TASK
+    REMOVE_TASK,
+    CHANGE_STATUS
 }

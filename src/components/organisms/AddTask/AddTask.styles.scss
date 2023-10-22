@@ -1,0 +1,48 @@
+@import "styles/fonts";
+@import "styles/variables";
+@import "styles/mixins";
+
+.add-task {
+  background: #{$color-background-primary};
+  padding-top: 2rem;
+
+  &__form {
+    padding: 1rem;
+    background: #{$color-background-secondary};
+    margin: 0 auto;
+
+    @include responsive(lg) {
+      padding: 2rem;
+      max-width: 640px;
+      margin: 0;
+    }
+  }
+
+  &__form-item {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    &--error {
+      input, textarea {
+        box-shadow: 0 0 1px 1px #{$color-error};
+      }
+    }
+  }
+
+  &__field-error {
+    color: chocolate;
+    font-size: #{$text-xs};
+    font-weight: bold;
+    margin-top: .4rem;
+  }
+
+  &__submit-button {
+    width: 100%;
+
+    @include responsive(md) {
+      width: auto;
+      margin: 0 0 0 auto;
+    }
+  }
+}

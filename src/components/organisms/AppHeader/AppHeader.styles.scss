@@ -1,0 +1,9 @@
+@import "styles/mixins";
+
+.app-header {
+  padding: 1rem 0 0;
+
+  @include responsive(md) {
+    padding: 2rem 0;
+  }
+}

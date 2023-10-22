@@ -1,0 +1,29 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.badge {
+  display: inline;
+  border-radius: 6px;
+  background: green;
+  color: white;
+  font-weight: 700;
+  padding: .4rem .2rem;
+  font-size: #{$text-xxs};
+
+  @include responsive(sm) {
+    padding: .4rem .3rem;
+    font-size: #{$text-xs};
+  }
+
+  &--todo {
+    background: deepskyblue;
+  }
+
+  &--in-progress {
+    background: coral;
+  }
+
+  &--completed {
+    background: #{$color-success};
+  }
+}

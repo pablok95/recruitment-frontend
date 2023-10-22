@@ -1,33 +1,17 @@
-import {todosActions} from "./store/todos";
-import {connect} from "react-redux";
+import OrganismAppHeader from "components/organisms/AppHeader";
+import OrganismAddTask from "components/organisms/AddTask";
+import OrganismTaskList from "components/organisms/TaskList";
+import OrganismAppFooter from "components/organisms/AppFooter";
 
-function App({todos, add, remove}) {
+import 'App.styles.scss';
 
-    function handleClick() {
-        add('test2')
-    }
-
+export default function App() {
     return (
-        <div>
-            <button onClick={handleClick}>Click</button>
-            <pre>
-                {todos}
-            </pre>
+        <div className="app">
+            <OrganismAppHeader/>
+            <OrganismAddTask/>
+            <OrganismTaskList/>
+            <OrganismAppFooter/>
         </div>
     );
 }
-
-const mapStateToProps = (state) => {
-    return {
-        todos: state.todos
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        add: (item) => dispatch(todosActions.add(item)),
-        remove: (item) => dispatch(todosActions.remove(item)),
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
