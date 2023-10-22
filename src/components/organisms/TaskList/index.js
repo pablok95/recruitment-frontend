@@ -10,13 +10,15 @@ function OrganismTaskList({ list, completedList }) {
     <main className="container task-list">
       <div className="task-list__wrapper">
         <h3 className="text-header-2">Tasks</h3>
-          {list.length ? (
-              <ul className="task-list__list">
-                  {list.map((item) => (
-                      <MoleculeTaskItem key={item.id} item={item} />
-                  ))}
-              </ul>
-          ) : <p className='text-description'>Tasks not found</p>}
+        {list.length ? (
+          <ul className="task-list__list">
+            {list.map((item) => (
+              <MoleculeTaskItem key={item.id} item={item} />
+            ))}
+          </ul>
+        ) : (
+          <p className="text-description">Tasks not found</p>
+        )}
       </div>
       {completedList.length ? (
         <div className="task-list__wrapper">

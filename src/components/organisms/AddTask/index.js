@@ -4,14 +4,14 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 
 import './AddTask.styles.scss';
-import {toastr} from "react-redux-toastr";
+import { toastr } from 'react-redux-toastr';
+
+export const validationSchema = Yup.object().shape({
+  title: Yup.string().min(2, 'Too short!').max(50, 'Too long!').required('Title is required'),
+  description: Yup.string().min(2, 'Too short!').max(50, 'Too long!')
+});
 
 function OrganismAddTask({ addTask }) {
-  const validationSchema = Yup.object().shape({
-    title: Yup.string().min(2, 'Too short!').max(50, 'Too long!').required('Title is required'),
-    description: Yup.string().min(2, 'Too short!').max(50, 'Too long!')
-  });
-
   const formik = useFormik({
     initialValues: {
       title: '',
@@ -21,7 +21,7 @@ function OrganismAddTask({ addTask }) {
     onSubmit: (values, formikHelpers) => {
       addTask(values);
       formikHelpers.resetForm();
-      toastr.success('Task has been added', `Title: ${values.title}`)
+      toastr.success('Task has been added', `Title: ${values.title}`);
     }
   });
 
