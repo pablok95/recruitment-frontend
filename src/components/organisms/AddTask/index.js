@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 
 import './AddTask.styles.scss';
+import {toastr} from "react-redux-toastr";
 
 function OrganismAddTask({ addTask }) {
   const validationSchema = Yup.object().shape({
@@ -20,6 +21,7 @@ function OrganismAddTask({ addTask }) {
     onSubmit: (values, formikHelpers) => {
       addTask(values);
       formikHelpers.resetForm();
+      toastr.success('Task has been added', `Title: ${values.title}`)
     }
   });
 

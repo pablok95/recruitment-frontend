@@ -8,13 +8,11 @@ import AtomBadge from 'components/atoms/Badge';
 import { isTaskCompleted } from 'helpers';
 
 import './TaskIten.styles.scss';
+import { toastr } from 'react-redux-toastr';
 
 function MoleculeTaskItem({ item, changeTaskStatus, removeTask }) {
   const { id, title, description, status, createdAt } = item;
   const [createdAtFromNow, setCreatedAtFromNow] = useState(createdAt.fromNow());
-  const handleRemoveTask = () => {
-    removeTask(id);
-  };
 
   useInterval(
     () => {
@@ -25,6 +23,13 @@ function MoleculeTaskItem({ item, changeTaskStatus, removeTask }) {
 
   const handleToggle = () => {
     changeTaskStatus(item);
+    toastr.success('Status has been changed', `Title: ${title}`);
+  };
+
+  const handleRemoveTask = (e) => {
+    e.stopPropagation();
+    removeTask(id);
+    toastr.error('Task has been removed', `Title: ${title}`);
   };
 
   return (
