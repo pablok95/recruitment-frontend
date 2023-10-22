@@ -1,3 +1,9 @@
+@import "styles/mixins";
+
 .app-footer {
-  background: blue;
+  padding: 3rem 0 1rem;
+
+  @include responsive(md) {
+    padding: 2rem 0;
+  }
 }

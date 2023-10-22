@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import MoleculeTaskItem from "components/molecules/TaskItem";
 
 import './TaskList.styles.scss'
+import {isTaskCompleted} from "helpers";
 
 function OrganismTaskList({list, completedList}) {
     return (
@@ -18,10 +19,8 @@ function OrganismTaskList({list, completedList}) {
                 <div className='task-list__wrapper'>
                     <h3 className='text-header-2'>Completed</h3>
                     <ul className='task-list__list task-item__wrapper--margin-top'>
-                        {completedList.map((item, index) => (
-                            <li key={`task-${index}`}>
-                                <MoleculeTaskItem item={item}/>
-                            </li>
+                        {completedList.map((item) => (
+                            <MoleculeTaskItem key={item.id} item={item}/>
                         ))}
                     </ul>
                 </div>
@@ -32,9 +31,9 @@ function OrganismTaskList({list, completedList}) {
 
 const mapStateToProps = (state) => ({
     list: state.todos.list
-        ?.filter((item) => item.status !== 'COMPLETED')
+        ?.filter((item) => !isTaskCompleted(item.status))
         .sort((a, b) => b.createdAt - a.createdAt),
-    completedList: state.todos.list?.filter((item) => item.status === 'COMPLETED')
+    completedList: state.todos.list?.filter((item) => isTaskCompleted(item.status))
 })
 
 export default connect(mapStateToProps, undefined)(OrganismTaskList);
