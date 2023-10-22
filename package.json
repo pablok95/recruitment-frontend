@@ -1,7 +1,7 @@
 {
   "name": "recruitment-frontend",
   "version": "0.1.0",
-  "homepage": "https://pablok95.github.io/recruitment-frontend",
+  "homepage": "https://pablok95.github.io/recruitment-frontend/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

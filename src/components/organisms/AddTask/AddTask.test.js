@@ -1,27 +1,27 @@
 import React from 'react';
 import AddTask, { validationSchema } from 'components/organisms/AddTask/index';
-import {Provider} from "react-redux";
-import {render as rtlRender, screen} from '@testing-library/react';
-import store from "store";
+import { Provider } from 'react-redux';
+import { render as rtlRender, screen } from '@testing-library/react';
+import store from 'store';
 
 const render = () => {
-  const Wrapper = ({children}) => <Provider store={store}>{children}</Provider>
-  return rtlRender(<AddTask />, {wrapper: Wrapper})
-}
+  const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>;
+  return rtlRender(<AddTask />, { wrapper: Wrapper });
+};
 
 describe('Add task form', () => {
   beforeEach(() => {
-    render()
-  })
+    render();
+  });
 
   test('add task should be in the document', () => {
-    const titleLabel = screen.getByLabelText("Title*")
-    expect(titleLabel).toBeInTheDocument()
-  })
+    const titleLabel = screen.getByLabelText('Title*');
+    expect(titleLabel).toBeInTheDocument();
+  });
 
-  test("title field should have label", () => {
-    const emailInputNode = screen.getByLabelText("Title*");
-    expect(emailInputNode.getAttribute("name")).toBe("title");
+  test('title field should have label', () => {
+    const emailInputNode = screen.getByLabelText('Title*');
+    expect(emailInputNode.getAttribute('name')).toBe('title');
   });
 
   test('validate function should pass on correct input ', async () => {
